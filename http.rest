@@ -1,2 +1,14 @@
-### 
+### CAO 1 UZD
 GET http://localhost:3001/cars/bmw
+
+### CAO 2.10
+GET http://localhost:3001/
+
+### CAO 2.2
+GET http://localhost:3001/Ford
+
+### CAO 2.3
+GET http://localhost:3001/data/23
+
+### CAO 2.4
+GET http://localhost:3001/data/email
