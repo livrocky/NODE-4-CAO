@@ -31,7 +31,6 @@ app.get("/:brand", (request, response) => {
 });
 
 //CAO 2.3 Sukurkite dinaminį GET route, kuris priims vartotojo id ir pagal jį grąžins atitinkamą vartotojo objektą. Hint: url parametrai visada stringai, o čia id - skaičius, tad reikės konvertuoti.
-
 app.get("/data/:postId", (request, response) => {
   const postId = +request.params.postId;
   console.log("postId===", postId);
@@ -45,15 +44,18 @@ app.get("/data/:postId", (request, response) => {
 });
 
 //CAO 2.4 Sukurkite GET route, kuris grąžins visus el. paštus (grąžinamas formatas: ["anb@abc.com", "abc@abc.com", "abc@acb.com]).
-
-app.get("/data/email", (request, response) => {
-  const emailEl = data.map((email) => {
-    return {
-      email,
-    };
+app.get("/data/users/emails", (request, response) => {
+  const emailEl = data.map((el) => {
+    return el.email;
   });
   console.log("emailEl===", emailEl);
   response.json(emailEl);
+});
+
+//CAO 2.5 Sukurkite GET route, į kurį pasikreipus, grąžins visų moterų (gender: Female) vardą ir pavardę (formatas: ["Rita Kazlauskaite", "Monika Simaskaite"]).
+app.get("/data/users/females", (request, response) => {
+  const femaleNames = data.filter((obj) => obj.gender === "Female").map((obj) => obj.first_name + " " + obj.last_name);
+  response.json(femaleNames);
 });
 
 //____________________________________________________________//

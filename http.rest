@@ -11,4 +11,7 @@ GET http://localhost:3001/Ford
 GET http://localhost:3001/data/23
 
 ### CAO 2.4
-GET http://localhost:3001/data/email
+GET http://localhost:3001/data/users/emails
+
+### CAO 2.5
+GET http://localhost:3001/data/users/females
